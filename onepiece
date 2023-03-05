@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>원피스 팬 홈페이지</title>
+  <style>
+    /* CSS 스타일링 */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+    #gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .gallery-item {
+      margin: 10px;
+    }
+    .gallery-item img {
+      width: 200px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1>원피스 팬 홈페이지</h1>
+
+  <div id="gallery">
+    <!-- JavaScript로 동적으로 갤러리 이미지 추가 -->
+  </div>
+
+  <script>
+    // 갤러리 이미지 정보를 담고 있는 배열
+    var galleryImages = [
+      {
+        src: "https://i.imgur.com/3HMKKjR.jpg",
+        alt: "루피",
+        caption: "몽키 D 루피"
+      },
+      {
+        src: "https://i.imgur.com/ytb7lJH.jpg",
+        alt: "조로",
+        caption: "조로"
+      },
+      {
+        src: "https://i.imgur.com/9zvM0yM.jpg",
+        alt: "나미",
+        caption: "나미"
+      },
+      {
+        src: "https://i.imgur.com/5AsB8Nc.jpg",
+        alt: "우솝",
+        caption: "우솝"
+      },
+      {
+        src: "https://i.imgur.com/Yw92Q2u.jpg",
+        alt: "상디",
+        caption: "상디"
+      }
+    ];
+
+    // 갤러리 이미지를 동적으로 추가하는 함수
+    function addGalleryImages() {
+      var gallery = document.getElementById("gallery");
+      for (var i = 0; i < galleryImages.length; i++) {
+        var item = document.createElement("div");
+        item.className = "gallery-item";
+
+        var image = document.createElement("img");
+        image.src = galleryImages[i].src;
+        image.alt = galleryImages[i].alt;
+
+        var caption = document.createElement("p");
+        caption.innerText = galleryImages[i].caption;
+
+        item.appendChild(image);
+        item.appendChild(caption);
+        gallery.appendChild(item);
+      }
+    }
+
+    // 갤러리 이미지를 화면에 추가
+    addGalleryImages();
+  </script>
+</body>
+</html>
